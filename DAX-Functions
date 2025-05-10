@@ -15,7 +15,7 @@ This section highlights the key DAX functions used throughout the report to calc
 * Total Expenses = 
     SUM('Income Statement (SOPL)'[Total Operating Expenses])
 
-Sales & Marketing = 
+* Sales & Marketing = 
     SUM('Income Statement (SOPL)'[Sales and Marketing])
 
 * Research & Development = 

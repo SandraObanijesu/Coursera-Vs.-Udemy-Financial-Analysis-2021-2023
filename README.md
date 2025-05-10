@@ -39,7 +39,7 @@ To prepare the financial data for analysis, I performed several key data cleanin
 
 * Adjusted the data types to ensure accurate analysis and compatibility with Power BI.
 
-* Transposed tables to restructure the layout for easier comparison and anlysis.
+* Transposed tables to restructure the layout for easier comparison and analysis.
 
 * Added new calculated columns to facilitate deeper insights.
 
@@ -108,7 +108,7 @@ Over the three years, Coursera consistently held higher current assets (CA) comp
 
 ## Statements of Cash Flow of Coursera and Udemy
 ![Alt text](4_Cash_Flows_(SOCF)_Analysis.png)
-Over the three year period, both Coursera and Udemy displayed varying cash flow dynamics that reflect their operational stability, investment patterns, and financing strategies.
+Over the three-year period, both Coursera and Udemy displayed varying cash flow dynamics that reflect their operational stability, investment patterns, and financing strategies.
 
 In 2021, both companies generated strong inflows from financing activities due to their Initial Public Offerings (IPO). Coursera raised approximately $550M, while Udemy generated around $419M. However, both companies recorded negative free cash flow (FCF), indicating that operating cash was insufficient to cover capital expenditures. Despite this, Coursera ended the year with a solid net cash flow of approximately $500M, supported by a modest $2M in operating cash flow. Udemy, with a negative operating cash flow of about -$7M, still posted a net cash flow of approximately $359M, largely due to the heavy financing inflows.
 
@@ -122,36 +122,37 @@ Overall, Coursera demonstrated stronger recovery in 2023, showing greater effici
 
 
 
-# Recommendations For Coursera
+# Recommendations for Coursera
 Coursera should focus on the following areas to optimize its performance:
-* **Capitalze on Operational efficiency Gains**
-Cousera achieved a positive free cash flow in 2023, indicating improving operational efficiency. To sustain this momentum, the company should continue optimizing costs especially in sales and Marketing which consistently accounts for nearly half of its total expenses.
+* **Capitalize on Operational efficiency Gains**
+Coursera achieved a positive free cash flow in 2023, indicating improving operational efficiency. To sustain this momentum, the company should continue optimizing costs especially in sales and Marketing which consistently accounts for nearly half of its total expenses.
 
 * **Maximize ROI on Research and Development Investments**
-With Coursera consistently spending a larger  share of expenses on R&D compared to Udemy, it should ensure that these investments translate into measurable service(product) enhancements and user growth.
+With Coursera consistently spending a larger share of expenses on R&D compared to Udemy, it should ensure that these investments translate into measurable service(product) enhancements and user growth.
 
 * **Maintain Conservative Capital Structure** 
-Coursera has a strong equity base and low debt-to-equity ratio, which positions it well for long-term stability. It should continue leveraging this conservative capital structure but can explore  prudent use of low cost debt for strategic expansion or tech infrastructure improvement.
+Coursera has a strong equity base and low debt-to-equity ratio, which positions it well for long-term stability. It should continue leveraging this conservative capital structure but can explore prudent use of low-cost debt for strategic expansion or tech infrastructure improvement.
 
 * **Improve Asset Utilization**
-Despite regular capital investments in PPE and software, Coursera's total assets have declined. This suggests potential underutilization or high depreciation. The company should evaluate assest productivity and explore better ways to deploy its resources.
+Despite regular capital investments in PPE and software, Coursera's total assets have declined. This suggests potential underutilization or high depreciation. The company should evaluate asset productivity and explore better ways to deploy its resources.
 
 
-# Recommendations For Udemy
+# Recommendations for Udemy
+Udemy should focus on the following areas to optimize its performance:
 * **Enhance Cash Flow Management**
-Udemy has consistently reported negative operating and free cash flow which  may pressure liquidity. the company should focus on reassessing its revenue model, pricing strategy or cost control to move toward cash flow positivity.
+Udemy has consistently reported negative operating and free cash flow which  may pressure liquidity. The company should focus on reassessing its revenue model, pricing strategy or cost control to move toward cash flow positivity.
 
 * **Rebalance Capital Structure**
-With a relatively high debt-to-equity ratio and negative free cash flow, Udemy needs to work on reducing reliance on external financing. While this csn accelerate growth,it also increases finacial risk. Therefore, improving equity financing or reducing debt would strengthen the company's balance sheet.
+With a relatively high debt-to-equity ratio and negative free cash flow, Udemy needs to work on reducing reliance on external financing. While this can accelerate growth, it also increases financial risk. Therefore, improving equity financing or reducing debt would strengthen the company's balance sheet.
 
 * **Rebalance Expense Structure**
 Udemy allocates over 60% of its total expenses to sales and marketing. Management should access the return on this investment to ensure it is driving sustainable user acquisition and retention.
 
 
-# Joint Recommendations For Both Companies
-* Both companies should comtinue to monitor and optimize their expense allocation, particularly balancing customer acquisition (S&M) and product innovation(R&D)
+# Joint Recommendations for both Companies
+* Both companies should continue to monitor and optimize their expense allocation, particularly balancing customer acquisition (S&M) and product innovation(R&D)
 
-* Clearly communicate how ongoing investments especially in intangible assets like software support future growth and competitve advantage.
+* Clearly communicate how ongoing investments especially in intangible assets like software support future growth and competitive advantage.
 
 
 # Limitations
