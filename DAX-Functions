@@ -1,0 +1,410 @@
+This section highlights the key DAX functions used throughout the report to calculate important financial metrics, enhance data modeling, and support meaningful insights through dynamic and accurate analysis
+
+1. **INCOME STATEMENTS (SOPL) MEASURES**
+
+1.0 **Base Measures**
+* Total Revenue = 
+    SUM('Income Statement (SOPL)'[Revenue])
+
+* Cost of Revenue = 
+    SUM('Income Statement (SOPL)'[Cost of Revenue])
+
+* Gross Profit = 
+   [Total Revenue] - ABS([Cost of Revenue])
+
+* Total Expenses = 
+    SUM('Income Statement (SOPL)'[Total Operating Expenses])
+
+Sales & Marketing = 
+    SUM('Income Statement (SOPL)'[Sales and Marketing])
+
+* Research & Development = 
+    SUM('Income Statement (SOPL)'[Research and Development])
+
+* General & Administrative =
+    SUM('Income Statement (SOPL)'[General and Administrative])
+
+* Loss from Operation(PBIT) = 
+    SUM('Income Statement (SOPL)'[Loss from Operations])
+
+ * Net Loss = 
+    SUM('Income Statement (SOPL)'[Net Loss])
+
+
+1.1 **Profitability and other Ratios**
+* Gross Profit Margin = 
+    DIVIDE([Gross Profit], [Total Revenue])
+
+* Loss From Operations Margin = 
+    DIVIDE(ABS([Loss from Operation(PBIT)]), [Total Revenue])
+
+* Net Loss Margin = 
+    DIVIDE(ABS([Net Loss]), [Total Revenue])
+
+* ROCE = 
+    DIVIDE([Loss from Operation(PBIT)], [Capital Employed])
+
+* Cost-to-Revenue % = 
+    DIVIDE([Absolute Cost of Revenue], [Total Revenue])
+
+* Expenses-to-Revenue % = 
+    DIVIDE([Absolute Total Expenses], [Total Revenue])
+
+* S&M Expenses % = 
+    DIVIDE([Sales & Marketing], ABS[Total Expenses])
+
+* R&D Expenses % = 
+    DIVIDE([Research & Development], ABS[Total Expenses])
+
+* G&A Expenses % = 
+    DIVIDE([General & Administrative], ABS[Total Expenses])
+
+
+1.2 **Prior Year Measures**
+* Revenue PY = 
+VAR PriorYearRevenue = CALCULATE([Total Revenue], 
+                          PREVIOUSYEAR('Date'[Date]))
+RETURN 
+IF(ISBLANK(PriorYearRevenue), 0, [Prior Year Revenue])
+
+* COS PY = 
+VAR prioryearcos = CALCULATE([Cost of Revenue], 
+                    PREVIOUSYEAR('Date'[Date]))
+RETURN 
+IF(ISBLANK(prioryearcos), 0, prioryearcos)
+
+* Expenses PY = 
+VAR ExpPriorYear = CALCULATE([Total Expenses], 
+                      PREVIOUSYEAR('Date'[Date]))
+RETURN
+If(ISBLANK(ExpPriorYear), 0, ExpPriorYear)
+
+* ROCE PY = 
+VAR
+RocePy = CALCULATE([ROCE],
+          PREVIOUSYEAR('Date'[Date]))
+RETURN
+IF(ISBLANK(RocePy), 0, RocePy)
+
+
+1.3 **Year over Year Percentage Change (YoY % ▲) Measures**
+* Cost of revenue YoY ▲ = 
+VAR
+CosYoY = DIVIDE(ABS([Cost of Revenue]) - ABS([COS PY]), ABS([COS PY]))
+RETURN
+IF(ISBLANK(CosYoY), 0, CosYoY)
+
+* Expenses YoY ▲ = 
+VAR
+ExpYoY = DIVIDE(ABS([Total Expenses]) - ABS([Expenses PY]), ABS([Expenses PY]))
+RETURN
+IF(ISBLANK(ExpYoY), 0, ExpYoY)
+
+* Gross Profit YoY ▲ = 
+VAR CurrentYearGP = [Gross Profit]
+VAR PreviousYearGP =  CALCULATE([Gross Profit],
+                          PREVIOUSYEAR('Date'[Date]))
+RETURN
+IF(ISBLANK(DIVIDE(CurrentYearGP - PreviousYearGP, ABS(PreviousYearGP))), 0, 
+DIVIDE(CurrentYearGP - PreviousYearGP, ABS(PreviousYearGP)))
+
+* Loss from Operation YoY ▲ = 
+VAR CurrentYearLoss = [Loss from Operation(PBIT)]
+VAR PreviousYearLoss =  CALCULATE([Loss from Operation(PBIT)],
+                          PREVIOUSYEAR('Date'[Date]))
+RETURN
+ IF
+     (ISBLANK(DIVIDE(ABS(CurrentYearLoss) - ABS(PreviousYearLoss), ABS(PreviousYearLoss))), 
+           0,
+          DIVIDE(ABS(CurrentYearLoss) - ABS(PreviousYearLoss), ABS(PreviousYearLoss)))
+
+* Net Loss YoY ▲ = 
+VAR CurrentYearNL = [Net Loss]
+VAR PreviousYearNL = CALCULATE([Net Loss],
+                         PREVIOUSYEAR('Date'[Date]))
+RETURN
+ IF
+    (ISBLANK(DIVIDE(ABS(CurrentYearNL) - ABS(PreviousYearNL), ABS(PreviousYearNL))),
+         0,  
+             DIVIDE(ABS(CurrentYearNL) - ABS(PreviousYearNL), ABS(PreviousYearNL)))
+
+* Revenue YoY ▲ = 
+VAR CurrentYearRevenue = [Total Revenue]
+VAR PreviousYearRevenue =  CALCULATE([Total Revenue],
+                                PREVIOUSYEAR('Date'[Date]))
+RETURN 
+ IF(
+    ISBLANK(DIVIDE(CurrentYearRevenue - PreviousYearRevenue, ABS(PreviousYearRevenue))),
+        0,
+            DIVIDE(CurrentYearRevenue - PreviousYearRevenue, ABS(PreviousYearRevenue)))
+
+* ROCE YoY ▲ = 
+VAR CurrentYearROCE = [ROCE]
+VAR PreviousYearROCE = CALCULATE([ROCE],
+                          PREVIOUSYEAR('Date'[Date]) )
+RETURN
+IF(
+    ISBLANK(DIVIDE(CurrentYearROCE - PreviousYearROCE, ABS(PreviousYearROCE))),
+        0,
+            DIVIDE(CurrentYearROCE - PreviousYearROCE, ABS(PreviousYearROCE)))
+
+
+
+2. **BALANCE SHEETS (SOFP) MEASURES**
+
+2.0 Base Measures
+* Total Assets = 
+     SUM('Balance Sheet (SOFP)'[Total Assets])
+
+* Total Liabilities =
+    SUM('Balance Sheet (SOFP)'[Total Liabilities])
+
+* Stockholders' Equity =
+    SUM('Balance Sheet (SOFP)'[Stockholders’ Equity])
+
+* Current Assets = 
+    SUM('Balance Sheet (SOFP)'[Current Assets])
+
+* Current Liabilities =
+    SUM('Balance Sheet (SOFP)'[Current Liabilities])
+
+* Non Current Assets =
+    [Total Assets] - [Current Assets]
+
+* Non Current Liabilities =
+    [Total Liabilities] - [Current Liabilities]
+
+* Capital Employed =
+    [Total Assets] - [Current Liabilities]
+
+* Working Capital =  
+    [Current Assets] - [Current Liabilities]
+
+
+2.1 **Liquidity Ratios Measures**
+* Debt-to-Equity Ratio = 
+     DIVIDE([Total Liabilities], [Stockholders' Equity])
+
+* Current Ratio = 
+    DIVIDE([Current Assets] , [Current Liabilities])
+
+
+2.2 **Prior Year Measures**
+* Assets PY = 
+VAR
+AssetPY = CALCULATE([Total Assets], 
+                PREVIOUSYEAR('Date'[Date])) 
+RETURN
+IF(ISBLANK(AssetPY), 0, AssetPY)
+
+* Equity PY = 
+VAR
+EquityPriorYear = CALCULATE([Stockholders' Equity], 
+                    PREVIOUSYEAR('Date'[Date]))
+RETURN
+IF(ISBLANK(EquityPriorYear), 0, EquityPriorYear)
+
+* Liabilities PY = 
+VAR
+LiabilityPriorYear = CALCULATE([Total Liabilities], 
+                          PREVIOUSYEAR('Date'[Date]))
+RETURN
+IF(ISBLANK(LiabilityPriorYear), 0, LiabilityPriorYear)
+
+* Current Ratio PY = 
+VAR
+CAPriorYear = CALCULATE([Current Ratio], 
+               PREVIOUSYEAR('Date'[Date]))
+RETURN
+IF(ISBLANK(CAPriorYear), 0, CAPriorYear)
+
+* Debt-to-Equity PY = 
+VAR
+DEPriorYear = CALCULATE([Debt-to-Equity Ratio], 
+               PREVIOUSYEAR('Date'[Date]))
+RETURN
+IF(ISBLANK(DEPriorYear), 0, DEPriorYear)
+
+* Working Capital PY = 
+VAR 
+WCPriorYear = CALCULATE([Working Capital], 
+                PREVIOUSYEAR('Date'[Date]))
+RETURN
+IF(ISBLANK(WCPriorYear), 0, WCPriorYear)
+
+
+2.3 Year over Year Percentage Change (YoY % ▲) Measures
+* Assets YoY ▲ = 
+VAR CurrentYearAsset = [Total Assets]
+VAR PreviousYearAsset = CALCULATE([Total Assets],
+                         PREVIOUSYEAR('Date'[Date]))
+RETURN
+IF(
+    ISBLANK(DIVIDE(CurrentYearAsset - PreviousYearAsset, ABS(PreviousYearAsset))),
+        0,
+            DIVIDE(CurrentYearAsset - PreviousYearAsset, ABS(PreviousYearAsset)))
+
+* Equity YoY % ▲ = 
+VAR CurrentYearEquity = [Stockholders' Equity]
+VAR PreviousYearEquity = CALCULATE([Stockholders' Equity],
+                           PREVIOUSYEAR('Date'[Date]))
+RETURN
+IF(
+        ISBLANK(DIVIDE(CurrentYearEquity - PreviousYearEquity, ABS(PreviousYearEquity))),
+            0,
+                 DIVIDE(CurrentYearEquity - PreviousYearEquity, ABS(PreviousYearEquity)))
+
+* Liabilities YoY % ▲ = 
+VAR CurrentYearLB = [Total Liabilities]
+VAR PreviousYearLB = CALCULATE([Total Liabilities],
+                         PREVIOUSYEAR('Date'[Date]))
+RETURN 
+IF(
+        ISBLANK(DIVIDE(CurrentYearLB - PreviousYearLB, ABS(PreviousYearLB))),
+            0,
+                DIVIDE(CurrentYearLB - PreviousYearLB, ABS(PreviousYearLB)))
+
+* Working Capital YoY % ▲ = 
+VAR CurrentYearWC = [Working Capital]
+VAR PreviousYearWC = CALCULATE([Working Capital],
+                          PREVIOUSYEAR('Date'[Date]))
+RETURN
+IF(
+        ISBLANK(DIVIDE(CurrentYearWC - PreviousYearWC, ABS(PreviousYearWC))),
+            0,
+                DIVIDE(CurrentYearWC - PreviousYearWC, ABS(PreviousYearWC)))
+          
+* Debt-to-Equity YoY % ▲ = 
+VAR CurrentYearDE = [Debt-to-Equity Ratio]
+VAR PreviousYearDE = CALCULATE([Debt-to-Equity Ratio],
+                         PREVIOUSYEAR('Date'[Date]))
+RETURN
+ IF(
+        ISBLANK(DIVIDE(CurrentYearDE - PreviousYearDE, ABS(PreviousYearDE))),
+            0,
+                DIVIDE(CurrentYearDE - PreviousYearDE, ABS(PreviousYearDE)))
+
+* Current Ratio YoY % ▲ = 
+VAR CurrentYearCR = [Current Ratio]
+VAR PreviousYearCR = CALCULATE([Current Ratio],
+                         PREVIOUSYEAR('Date'[Date]))
+RETURN
+IF(
+        ISBLANK(DIVIDE(CurrentYearCR - PreviousYearCR, ABS(PreviousYearCR))),
+            0,
+                DIVIDE(CurrentYearCR - PreviousYearCR, ABS(PreviousYearCR)))
+
+
+
+3. **STATEMENTS OF CASH FLOWS (SOCF) MEASURES**
+
+3.0 Base Measures
+* Total Operating Activities = 
+SUM('Cash Flow (SOCF)'[Net Cash provided by Operating Activities])
+
+*  Total Investing Activities = 
+SUM('Cash Flow (SOCF)'[Net Cash provided by Investing Activities])
+
+* Total Financing Activities = 
+SUM('Cash Flow (SOCF)'[Net cash provided by Financing Activities])
+
+*  Free Cash Flow(FCF) = 
+[Total Operating Activities] - ABS([Total Capital Expenditure])
+
+* Net CashFlow = 
+SUM('Cash Flow (SOCF)'[Net increase (decrease) in cash, cash equivalents,and restricted cash])
+
+* Total Capital Expenditure = 
+SUM('Cash Flow (SOCF)'[Total Capital Expenditure])
+
+
+3.1 **Prior Year Measures**
+* Operating CashFlow PY = 
+VAR 
+OperatingPriorYear = CALCULATE([Total Operating Activities], 
+                         PREVIOUSYEAR('Date'[Date]))
+RETURN
+IF(ISBLANK(OperatingPriorYear), 0, OperatingPriorYear)
+
+* Investing CashFlow PY = 
+ VAR
+ InvestingPriorYear = CALCULATE([Total Investing Activities], 
+                          PREVIOUSYEAR('Date'[Date]))
+RETURN
+IF(ISBLANK(InvestingPriorYear), 0, InvestingPriorYear)
+
+* Financing CashFlow PY = 
+VAR 
+FinancingPriorYear = CALCULATE([Total Financing Activities], 
+                          PREVIOUSYEAR('Date'[Date]))
+RETURN
+IF(ISBLANK(FinancingPriorYear), 0, FinancingPriorYear)
+
+* FCF PY = 
+VAR
+FcfPriorYear = CALCULATE([Free Cash Flow(FCF)], 
+                     PREVIOUSYEAR('Date'[Date]))
+RETURN
+IF(ISBLANK(FcfPriorYear), 0, FcfPriorYear)
+
+* CAPEX PY = 
+VAR
+CapexPriorYear = CALCULATE([Total Capital Expenditure],
+                      PREVIOUSYEAR('Date'[Date]))
+RETURN
+IF(ISBLANK(CapexPriorYear), 0, CapexPriorYear)
+
+
+3.2 **Year over Year Percentage Change (YoY % ▲) Measures**
+* Operating Cash Flow (OCF) YoY ▲ = 
+
+VAR CurrentYearOperating = [Total Operating Activities]
+VAR PreviousYearOperating =  CALCULATE([Total Operating Activities],
+                               PREVIOUSYEAR('Date'[Date]))
+RETURN
+ IF(
+    ISBLANK(DIVIDE(CurrentYearOperating - PreviousYearOperating, ABS(PreviousYearOperating))),
+        0,
+            DIVIDE(CurrentYearOperating - PreviousYearOperating, ABS(PreviousYearOperating)))
+
+* Investing Cash Flow YoY ▲ = 
+
+VAR CurrentYearInvesting = [Total Investing Activities]
+VAR PreviousYearInvesting = CALCULATE([Total Investing Activities],
+                              PREVIOUSYEAR('Date'[Date]))
+RETURN
+IF(
+    ISBLANK(DIVIDE(CurrentYearInvesting - PreviousYearInvesting, ABS(PreviousYearInvesting))),
+        0,
+            DIVIDE(CurrentYearInvesting - PreviousYearInvesting, ABS(PreviousYearInvesting)))
+
+* Financing Cash Flow YoY % ▲ = 
+
+VAR CurrentYearFinancing = [Total Financing Activities]
+VAR PreviousYearFinancing = CALCULATE([Total Financing Activities],
+                                PREVIOUSYEAR('Date'[Date]))
+RETURN
+ IF(
+    ISBLANK(DIVIDE(CurrentYearFinancing - PreviousYearFinancing, ABS(PreviousYearFinancing))),
+        0,
+             DIVIDE(CurrentYearFinancing - PreviousYearFinancing, ABS(PreviousYearFinancing)))
+
+* Free Cash Flow YoY % ▲ = 
+VAR CurrentYearFCF = [Free Cash Flow(FCF)]
+VAR PreviousYearFCF = CALCULATE([Free Cash Flow(FCF)],
+                         PREVIOUSYEAR('Date'[Date]))
+RETURN
+IF(
+    ISBLANK(DIVIDE(CurrentYearFCF - PreviousYearFCF, ABS(PreviousYearFCF))),
+        0,
+            DIVIDE(CurrentYearFCF - PreviousYearFCF, ABS(PreviousYearFCF)))
+
+* CAPEX YoY % ▲ = 
+VAR CurrentYearCapex = [Total Capital Expenditure]
+VAR PreviousYearCapex = CALCULATE([Total Capital Expenditure],
+                          PREVIOUSQUARTER('Date'[Date]))
+RETURN
+IF(
+    ISBLANK(DIVIDE(CurrentYearCapex - PreviousYearCapex, ABS(PreviousYearCapex))),
+        0,
+            DIVIDE(CurrentYearCapex - PreviousYearCapex, ABS(PreviousYearCapex)))
