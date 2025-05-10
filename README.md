@@ -124,28 +124,28 @@ Overall, Coursera demonstrated stronger recovery in 2023, showing greater effici
 
 # Recommendations for Coursera
 Coursera should focus on the following areas to optimize its performance:
-* **Capitalize on Operational efficiency Gains**
+* **Capitalize on Operational efficiency Gains:**
 Coursera achieved a positive free cash flow in 2023, indicating improving operational efficiency. To sustain this momentum, the company should continue optimizing costs especially in sales and Marketing which consistently accounts for nearly half of its total expenses.
 
-* **Maximize ROI on Research and Development Investments**
+* **Maximize ROI on Research and Development Investments:**
 With Coursera consistently spending a larger share of expenses on R&D compared to Udemy, it should ensure that these investments translate into measurable service(product) enhancements and user growth.
 
-* **Maintain Conservative Capital Structure** 
+* **Maintain Conservative Capital Structure:** 
 Coursera has a strong equity base and low debt-to-equity ratio, which positions it well for long-term stability. It should continue leveraging this conservative capital structure but can explore prudent use of low-cost debt for strategic expansion or tech infrastructure improvement.
 
-* **Improve Asset Utilization**
+* **Improve Asset Utilization:**
 Despite regular capital investments in PPE and software, Coursera's total assets have declined. This suggests potential underutilization or high depreciation. The company should evaluate asset productivity and explore better ways to deploy its resources.
 
 
 # Recommendations for Udemy
 Udemy should focus on the following areas to optimize its performance:
-* **Enhance Cash Flow Management**
+* **Enhance Cash Flow Management:**
 Udemy has consistently reported negative operating and free cash flow which  may pressure liquidity. The company should focus on reassessing its revenue model, pricing strategy or cost control to move toward cash flow positivity.
 
-* **Rebalance Capital Structure**
+* **Rebalance Capital Structure:**
 With a relatively high debt-to-equity ratio and negative free cash flow, Udemy needs to work on reducing reliance on external financing. While this can accelerate growth, it also increases financial risk. Therefore, improving equity financing or reducing debt would strengthen the company's balance sheet.
 
-* **Rebalance Expense Structure**
+* **Rebalance Expense Structure:**
 Udemy allocates over 60% of its total expenses to sales and marketing. Management should access the return on this investment to ensure it is driving sustainable user acquisition and retention.
 
 
