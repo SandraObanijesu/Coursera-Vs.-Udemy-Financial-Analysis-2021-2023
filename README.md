@@ -23,7 +23,7 @@ The project requires:
 
 
 # About The Project 
-This project provides a detailed financial analysis of two leading online learning platforms, Coursera and Udemy, covering the fiscal years 2021 to 2023. It evaluates and compares both companies' financial performance using key indicators from Income Statements (SOPL), Balance Sheets (SOFP), and Statements of Cash Flows (SOCF). The goal is to access which company is demonstrating stronger financial health, operational efficiency, and growth potential, while also highlighting areas of concern or opportunities for improvement. The findings are supported by clear visualizations and simplified commentary to make the analysis both insightful and easy to understand.
+This project provides a detailed financial analysis of two leading online learning platforms, Coursera and Udemy, covering the fiscal years 2021 to 2023. It evaluates and compares both companies' financial performance using key indicators from Statement of Profit or Loss (Income Statements), Statement of Financial Position (Balance Sheets), and Statements of Cash Flows. The goal is to access which company is demonstrating stronger financial health, operational efficiency, and growth potential, while also highlighting areas of concern or opportunities for improvement. The findings are supported by clear visualizations and simplified commentary to make the analysis both insightful and easy to understand.
 
 # The Data Set 
 The dataset used in this analysis was obtained directly fron the official websites of Coursera and Udemy. These datasets include publicly available raw financial reports such as income statements, balance sheets and cash flow statements, published for the fiscal years 2021, 2022 and 20223. I applied ETL (Extract, Transform, Load) processes, utilizing tools like Power BI to efficiently extract, clean, transform, and load the data. This preparation ensured the datasets were ready for analysis and visualization to enable meaningful comparison and accurate insight generation.
@@ -68,9 +68,9 @@ I established a downward flow data model to ensure a seamless connection between
 # Insights
 After performing data cleaning and thoroughly analyzing the financial statement of both Coursera and Udemy, I uncovered several key insights:
 
-## Income Statements (Statements of Profit or Loss) Analysis of Coursera and Udemy
+## Statements of Profit or Loss (Income Statements) Analysis of Coursera and Udemy
 ![Alt text](1_Financial_Performance_Overview.png)
-![Alt text](2_Income_Statements_(SOPL)_Analysis.png)
+![Alt text](2_Income_Statement_(SOPL)_Report.png)
 Over the past three years, Udemy recorded higher revenues than Coursera, generating approximately $516 million in 2021, $629 million in 2022, and $729 million in 2023, compared to Coursera’s revenue of $415 million in 2021, $524 million in 2022, and $636 million in 2023. Likewise, over the same period, Udemy consistently recorded a higher gross profit than Coursera, driven by its higher revenue base. However, Coursera maintained a more efficient cost structure, as reflected in its lower cost-to-revenue ratio of 42.17%, compared to Udemy’s 44.81%. This indicates that although Udemy generates more revenue, Coursera is relatively better at managing its direct costs.
 
 Looking at Gross Profit Margin (GPM) trends, Coursera initially had stronger margins of 60.07% in 2021 and 63.29% in 2022 compared to Udemy’s 54.23% and 56.24%, respectively. However, in 2023, Coursera’s GPM dropped sharply to 51.87%, while Udemy improved to 57.53%. This improvement for Udemy, despite a higher absolute cost of sales of approximately $310 million, can be attributed to its stronger revenue performance of approximately $729 million, which outpaced the increase in cost of revenue resulting in a more favorable gross profit margin.
@@ -93,7 +93,7 @@ Return on Capital Employed (ROCE) further highlights Udemy’s financial struggl
 
 
 
-## Balance Sheets (Statement of Financial Position) Analysis of Coursera and Udemy
+## Statement of Financial Position (Balance Sheet) Analysis of Coursera and Udemy
 ![Alt text](3_Balance_Sheets_(SOFP)_Analysis.png)
 From 2021 to 2023, Coursera consistently maintained a stronger equity position compared to Udemy. Coursera’s total equity declined from approximately $742M in 2021 to $616M in 2023, reflecting the cumulative effect of recurring net losses over the years. Although its equity shrank, Coursera still retained a relatively healthy capital structure, with liabilities accounting for just 33% of total assets in 2023. Udemy, on the other hand, recorded a smaller equity base throughout the same period dropping from approximately $390M in 2021 to $339M in 2022, before slightly improving to $357M in 2023. This rebound in equity aligns with the reduced net loss recorded in 2023.
 However, Udemy operates with a higher leverage profile: in 2023, its liabilities accounted for approximately 52% of total assets compared to Coursera’s 33%, indicating a heavier reliance on external obligations which is further reflected in its higher debt-to-equity ratios.
@@ -106,8 +106,8 @@ Over the three years, Coursera consistently held higher current assets (CA) comp
 
 
 
-## Statements of Cash Flow of Coursera and Udemy
-![Alt text](4_Cash_Flows_(SOCF)_Analysis.png)
+## Statement of Cash Flow Analysis of Coursera and Udemy
+![Alt text](4_Cash_Flow_(SOCF)_Report.png)
 Over the three-year period, both Coursera and Udemy displayed varying cash flow dynamics that reflect their operational stability, investment patterns, and financing strategies.
 
 In 2021, both companies generated strong inflows from financing activities due to their Initial Public Offerings (IPO). Coursera raised approximately $550M, while Udemy generated around $419M. However, both companies recorded negative free cash flow (FCF), indicating that operating cash was insufficient to cover capital expenditures. Despite this, Coursera ended the year with a solid net cash flow of approximately $500M, supported by a modest $2M in operating cash flow. Udemy, with a negative operating cash flow of about -$7M, still posted a net cash flow of approximately $359M, largely due to the heavy financing inflows.
