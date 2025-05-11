@@ -94,7 +94,7 @@ Return on Capital Employed (ROCE) further highlights Udemy’s financial struggl
 
 
 ## Statement of Financial Position (Balance Sheet) Analysis of Coursera and Udemy
-![Alt text](3_Balance_Sheets_(SOFP)_Analysis.png)
+![Alt text](3_Balance_Sheet_(SOFP)_Report.png)
 From 2021 to 2023, Coursera consistently maintained a stronger equity position compared to Udemy. Coursera’s total equity declined from approximately $742M in 2021 to $616M in 2023, reflecting the cumulative effect of recurring net losses over the years. Although its equity shrank, Coursera still retained a relatively healthy capital structure, with liabilities accounting for just 33% of total assets in 2023. Udemy, on the other hand, recorded a smaller equity base throughout the same period dropping from approximately $390M in 2021 to $339M in 2022, before slightly improving to $357M in 2023. This rebound in equity aligns with the reduced net loss recorded in 2023.
 However, Udemy operates with a higher leverage profile: in 2023, its liabilities accounted for approximately 52% of total assets compared to Coursera’s 33%, indicating a heavier reliance on external obligations which is further reflected in its higher debt-to-equity ratios.
 
